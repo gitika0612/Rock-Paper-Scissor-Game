@@ -24,25 +24,18 @@ function win(userChoice, computerChoice){
 	userScore++;
 	userScore_span.innerHTML = userScore;
 	computerScore_span.innerHTML = computerScore; 
-	const smallUserWord = "user".fontsize(3).sub();
-	const smallCompWord = "comp".fontsize(3).sub(); 
-	result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord} . You win! `;
-	document.getElementById(userChoice).classList.add('.green-glow');
+	result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You win! `;
 }
 
 function lose(userChoice, computerChoice ){
 	computerScore++;
 	userScore_span.innerHTML = userScore;
-	computerScore_span.innerHTML = computerScore; 
-	const smallUserWord = "user".fontsize(3).sub();
-	const smallCompWord = "comp".fontsize(3).sub(); 
-	result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallCompWord} . You lost...! `;
+	computerScore_span.innerHTML = computerScore;  
+	result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You lost...! `;
 }
 
 function draw(userChoice, computerChoice){ 
-	const smallUserWord = "user".fontsize(3).sub();
-	const smallCompWord = "comp".fontsize(3).sub(); 
-	result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} equals ${convertToWord(computerChoice)}${smallCompWord} . It's a drawww. `;
+	result_p.innerHTML = `${convertToWord(userChoice)} equals ${convertToWord(computerChoice)}. It's a draw. `;
 }
 
 function game(userChoice){
@@ -50,7 +43,7 @@ function game(userChoice){
 	switch (userChoice + computerChoice) {
 		case "rs":
 		case "pr":
-		case "sr":
+		case "sp":
 		  win(userChoice, computerChoice);
 		  break;
 		case "rp":
@@ -60,7 +53,7 @@ function game(userChoice){
 		   break;
 		case "rr":
 		case "pp":
-		case "ss":s
+		case "ss":
 		    draw(userChoice, computerChoice);     
 	}
 } 
